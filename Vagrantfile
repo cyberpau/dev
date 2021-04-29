@@ -9,6 +9,8 @@ Vagrant.configure("2") do |config|
   # Install Docker / Docker Compose
   config.vm.provision :docker
 
+  config.vm.provision "shell", path: "bootstrap.sh"
+
   config.vm.provider "virtualbox" do |v|
     v.name = "dev.cyberpau.vm"
     v.memory = MEMORY

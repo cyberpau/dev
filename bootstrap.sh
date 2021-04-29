@@ -8,7 +8,10 @@ fi
 
 ## Update and install pre-requisites
 sudo yum update -y
-sudo yum install -y epel-release
+sudo yum install -y epel-release git
+
+## IF EXISTS pull dev repo, ELSE clone
+if cd dev; then git pull; else git clone https://github.com/cyberpau/dev.git
 
 ## Install Ansible
 sudo yum install -y ansible
