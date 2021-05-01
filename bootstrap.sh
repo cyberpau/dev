@@ -8,7 +8,7 @@ fi
 
 ## Update and install pre-requisites
 sudo yum update -y
-sudo yum install -y epel-release git
+sudo yum install -y epel-release git traceroute
 
 ## IF EXISTS pull dev repo, ELSE clone
 if cd dev; then git pull; else git clone https://github.com/cyberpau/dev.git
@@ -22,3 +22,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ## Create Persistent Volumes
 mkdir -p ${HOME}/postgres-data/
+
+

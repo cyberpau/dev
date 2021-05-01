@@ -9,7 +9,11 @@ Vagrant.configure("2") do |config|
   # Install Docker / Docker Compose
   config.vm.provision :docker
 
+  # Run bootstrap
   config.vm.provision "shell", path: "bootstrap.sh"
+
+  # Enable port-forwarding
+  # config.vm.network :forwarded_port, host: 5432, guest: 5432
 
   config.vm.provider "virtualbox" do |v|
     v.name = "dev.cyberpau.vm"
