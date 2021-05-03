@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "dev.cyberpau.vm"
 
   # Install Docker / Docker Compose
-  config.vm.provision :docker
+  # config.vm.provision :docker
 
   # Run bootstrap
   config.vm.provision "shell", path: "bootstrap.sh"
