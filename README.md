@@ -50,7 +50,9 @@
 
 ## PostgreSQL
 
-- Connecting to PostgreSQL Server: `psql -U postgres -p 5432 -h hostname`
+- Connecting to PostgreSQL Server: `psql -U postgres -p 5432 -h hostname` 
+
+- Create database: `CREATE DATABASE database_name;` and `\l` to get list of all databases.
 
 - Create Role: `CREATE ROLE cyberpau WITH LOGIN ENCRYPTED PASSWORD 'secret_password';`
 
