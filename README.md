@@ -37,8 +37,10 @@
 - Login to container (detached + rm): `docker exec -it -d --rm CONTAINER_NAME bash`
 
 - Create PostgreSQL container:
-`docker run -d --name CONTAINER_NAME -e POSTGRES_PASSWORD=mysecretpassword -v ${HOME}/postgres-data/:/var/lib/postgresql/data -p 5432:5432 postgres`
+`docker run -d --name dev-postgres -e POSTGRES_PASSWORD=mysecretpassword -v ${HOME}/postgres-data/:/var/lib/postgresql/data -p 5432:5432 postgres`
 
+- Create MySQL container:
+`docker run -d --name dev-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -v ${HOME}/mysql-data/:/var/lib/mysql -p 3306:3306 mysql/mysql-server:latest`
 
 ## Powershell v7 LTS
 
@@ -55,3 +57,5 @@
 - Give permision to role: `ALTER USER role_specification WITH CREATEDB CREATEROLE CREATEUSER;`
 
 - Give privilege to user on database: `GRANT ALL PRIVILEGES ON DATABASE "database_name" TO cyberpau;`
+
+## MySQL

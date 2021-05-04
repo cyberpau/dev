@@ -7,10 +7,10 @@ if [[ $EUID -gt 0 ]]
 fi
 
 if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
-  echo "Starting bootstrap..."
+  echo "Starting bootstrap.sh ..."
 else
   echo "Unable to connect to internet"
-  exit
+  exit 
 fi
 
 ## Update and install pre-requisites
@@ -40,4 +40,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 ## Create Persistent Volumes
+mkdir -p "${HOME}/apache-data/"
 mkdir -p "${HOME}/postgres-data/"
+mkdir -p "${HOME}/mysql-data/"

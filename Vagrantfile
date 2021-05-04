@@ -14,6 +14,10 @@ Vagrant.configure("2") do |config|
 
   # Enable port-forwarding
   # config.vm.network :forwarded_port, host: 5432, guest: 5432
+  config.vm.network "private_network", ip: "55.55.55.5"
+  # config.vm.network :forwarded_port, host: 5432, guest: 5432
+  # config.vm.network :forwarded_port, host: 3306, guest: 3306
+  # config.vm.network :forwarded_port, host: 8081, guest: 80
 
   config.vm.provider "virtualbox" do |v|
     v.name = "dev.cyberpau.vm"
