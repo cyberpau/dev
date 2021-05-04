@@ -59,3 +59,5 @@
 - Give privilege to user on database: `GRANT ALL PRIVILEGES ON DATABASE "database_name" TO cyberpau;`
 
 ## MySQL
+
+- Connecting to MySQL Server: `mysql --host=localhost --user=root --password=mysecretpassword`
