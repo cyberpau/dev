@@ -82,4 +82,4 @@
 
 - Important Linux File Directories:
 
-    ![Linux File Directory](files\images\linux-file-dir.jpg)
+    ![Linux File Directory](https://github.com/cyberpau/dev/blob/88a603f2ece178f519b86ca0a2714846d725c8c3/files/images/linux-file-dir.jpg?raw=true)
