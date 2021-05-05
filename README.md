@@ -42,7 +42,7 @@
 - Create MySQL container:
 `docker run -d --name dev-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -v ${HOME}/mysql-data/:/var/lib/mysql -p 3306:3306 mysql/mysql-server:latest`
 
-## Powershell v7 LTS
+## Powershell v7
 
 - Get powershell version: `Get-Host | Select-Object Version`
 
@@ -54,12 +54,32 @@
 
 - Create database: `CREATE DATABASE database_name;` and `\l` to get list of all databases.
 
-- Create Role: `CREATE ROLE cyberpau WITH LOGIN ENCRYPTED PASSWORD 'secret_password';`
+- Create Role: `CREATE ROLE backend WITH LOGIN ENCRYPTED PASSWORD 'mysecretpassword';` and `\du` to get list of all database roles
 
 - Give permision to role: `ALTER USER role_specification WITH CREATEDB CREATEROLE CREATEUSER;`
 
-- Give privilege to user on database: `GRANT ALL PRIVILEGES ON DATABASE "database_name" TO cyberpau;`
+- Give privilege to user on database: `GRANT ALL PRIVILEGES ON DATABASE projectraptor TO backend;`
 
 ## MySQL
 
 - Connecting to MySQL Server: `mysql --host=localhost --user=root --password=mysecretpassword`
+
+- Create new user: `CREATE USER 'backend'@'localhost' IDENTIFIED BY 'mysecretpassword';` and drop it using `DROP USER backend;`
+
+- Grant access: `GRANT ALL PRIVILEGES ON * . * TO 'backend'@'localhost';`
+
+- Show grants: `SHOW GRANTS FOR 'backend'@'localhost';`
+
+## Git
+
+- Untrack changes to file: `git update-index --assume-unchanged src/main/resources/application.properties`
+
+## Linux
+
+- Make file executable: `chmod +x filename.sh`
+
+- Add executable to user bash profile:
+
+- Important Linux File Directories:
+
+    ![Linux File Directory](files\images\linux-file-dir.jpg)
