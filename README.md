@@ -52,13 +52,18 @@
 
 - Connecting to PostgreSQL Server: `psql -U postgres -p 5432 -h hostname` 
 
-- Create database: `CREATE DATABASE database_name;` and `\l` to get list of all databases.
+- Create database: `CREATE DATABASE database_name;`
 
-- Create Role: `CREATE ROLE backend WITH LOGIN ENCRYPTED PASSWORD 'mysecretpassword';` and `\du` to get list of all database roles
+- Create Role: `CREATE ROLE backend WITH LOGIN ENCRYPTED PASSWORD 'mysecretpassword';`
 
 - Give permision to role: `ALTER USER role_specification WITH CREATEDB CREATEROLE CREATEUSER;`
 
 - Give privilege to user on database: `GRANT ALL PRIVILEGES ON DATABASE projectraptor TO backend;`
+
+- Common shortcut commands:
+    - List all database: `\l`
+    - List all tables: `dt`
+    - List all database roles: `\du` 
 
 ## MySQL
 
@@ -78,7 +83,11 @@
 
 - Make file executable: `chmod +x filename.sh`
 
-- Add executable to user bash profile:
+- Generate and use SSH keys:
+    - `ssh-keygen -t ed25519 -C "<comment>"` for ED25519 or `ssh-keygen -t rsa -b 2048 -C "<comment>"` for 2048-bit RSA
+    - Copy ssh public key to remote machine: `ssh-copy-id demo@198.51.100.0`
+    - disable password for root login: `sudo nano /etc/ssh/sshd_config` and modify to `PermitRootLogin without-password`
+
 
 - Important Linux File Directories:
 
