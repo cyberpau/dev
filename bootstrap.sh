@@ -43,3 +43,4 @@ sudo chmod +x /usr/local/bin/docker-compose
 mkdir -p "${HOME}/apache-data/"
 mkdir -p "${HOME}/postgres-data/"
 mkdir -p "${HOME}/mysql-data/"
+mkdir -p "${HOME}/jenkins-data/"

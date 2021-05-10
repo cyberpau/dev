@@ -42,6 +42,9 @@
 - Create MySQL container:
 `docker run -d --name dev-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -v ${HOME}/mysql-data/:/var/lib/mysql -p 3306:3306 mysql/mysql-server:latest`
 
+- Create Jenkins container:
+`docker run -d --name dev-jenkins -v ${HOME}/jenkins-data/:/var/jenkins_home -p 8082:8080 jenkins/jenkins:lts` and get initial password on `/var/jenkins_home/secret/initialAdminPassword`
+
 ## Powershell v7
 
 - Get powershell version: `Get-Host | Select-Object Version`
@@ -78,6 +81,10 @@
 ## Git
 
 - Untrack changes to file: `git update-index --assume-unchanged src/main/resources/application.properties`
+
+## Jenkins
+
+- 
 
 ## Linux
 
