@@ -43,7 +43,7 @@
 `docker run -d --name dev-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -v ${HOME}/mysql-data/:/var/lib/mysql -p 3306:3306 mysql/mysql-server:latest`
 
 - Create Jenkins container:
-`docker run -d --name dev-jenkins -v ${HOME}/jenkins-data/:/var/jenkins_home -p 8082:8080 jenkins/jenkins:lts` and get initial password on `/var/jenkins_home/secret/initialAdminPassword`
+`docker run -d --name dev-jenkins -v ${HOME}/jenkins-data/:/var/jenkins_home -p 8082:8080 jenkins/jenkins:lts`. Alternate account: `dev/dev/dev@cyberpau.com`
 
 ## Powershell v7
 
