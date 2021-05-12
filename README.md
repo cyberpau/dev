@@ -82,6 +82,8 @@
 
 - Untrack changes to file: `git update-index --assume-unchanged src/main/resources/application.properties`
 
+- Show logs oneline: `git log --oneline --all`
+
 ## Jenkins
 
 - 
