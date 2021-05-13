@@ -45,6 +45,9 @@
 - Create Jenkins container:
 `docker run -d --name dev-jenkins -v ${HOME}/jenkins-data/:/var/jenkins_home -p 8082:8080 jenkins/jenkins:lts`. Alternate account: `dev/dev/dev@cyberpau.com`
 
+- Create Kanban container: 
+`docker run -d --name kanboard -v ${HOME}/kanboard/kanboard_data:/var/www/app/data -v ${HOME}/kanboard/kanboard_plugins:/var/www/app/plugins -p 8083:80 --restart always -t kanboard/kanboard:v1.2.8`
+
 ## Powershell v7
 
 - Get powershell version: `Get-Host | Select-Object Version`
