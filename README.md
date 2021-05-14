@@ -1,7 +1,5 @@
 # My DEV Environment Setup
 
-# Architecture
-
 ![test](environment-architecture.png)
 
 <br><br>
