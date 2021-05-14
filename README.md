@@ -1,6 +1,6 @@
 # My DEV Environment Setup
 
-![test](environment-architecture.png)
+![test](files\images\environment-architecture.png)
 
 <br><br>
 
