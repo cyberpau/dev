@@ -1,17 +1,10 @@
 # My DEV Environment Setup
 
-**Host Environment**
-- IntelliJ IDE
-- Visual Studio Code
-- Powershell v7
-- Git
+# Architecture
 
-**Virtual Machine Environment**
-- Vagrant
-- Ansible
-- Docker
+![test](environment-architecture.png)
 
-<br>
+<br><br>
 
 # Cheatsheets
 
