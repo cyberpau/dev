@@ -1,6 +1,6 @@
 # My DEV Environment Setup
 
-![test](files\images\environment-architecture.png)
+![test](https://raw.githubusercontent.com/cyberpau/dev/master/files/images/environment-architecture.png)
 
 <br><br>
 
