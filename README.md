@@ -87,9 +87,11 @@
 
 - Show logs oneline: `git log --oneline --all`
 
-## Jenkins
+## Puppet
 
-- 
+- Pull update and deploy: `r10k deploy environment -p`
+
+- Run puppetserver: `puppet agent -t`
 
 ## Linux
 
