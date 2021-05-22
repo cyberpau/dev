@@ -15,7 +15,7 @@ fi
 
 ## Update and install pre-requisites
 sudo yum update -y
-sudo yum install -y epel-release git traceroute yum-utils
+sudo yum install -y epel-release git traceroute yum-utils net-tools vim
 
 ## IF EXISTS pull dev repo, ELSE clone
 if cd dev; 
@@ -45,3 +45,7 @@ mkdir -p "${HOME}/postgres-data/"
 mkdir -p "${HOME}/mysql-data/"
 mkdir -p "${HOME}/jenkins-data/"
 mkdir -p "${HOME}/kanboard/"
+mkdir -p "${HOME}/elasticsearch/"
+
+## Post installation steps
+sudo chown 1000:1000 elasticsearch/

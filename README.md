@@ -39,6 +39,16 @@
 - Create Kanban container: 
 `docker run -d --name kanboard -v ${HOME}/kanboard/kanboard_data:/var/www/app/data -v ${HOME}/kanboard/kanboard_plugins:/var/www/app/plugins -p 8083:80 --restart always -t kanboard/kanboard:v1.2.8`
 
+- Create elk network:
+`docker network create elastic`
+
+- Create single-node elasticsearch container (stopping):
+`docker run -d --name es01-test -v ${HOME}/elasticsearch/:/usr/share/elasticsearch/data --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.12.1`
+
+- Create kibana container:
+`docker run -d --name kib01-test --net elastic -p 5601:5601 -e "ELASTICSEARCH_HOSTS=http://es01-test:9200" docker.elastic.co/kibana/kibana:7.12.1`
+
+
 ## Powershell v7
 
 - Get powershell version: `Get-Host | Select-Object Version`
@@ -84,6 +94,41 @@
 
 - Run puppetserver: `puppet agent -t`
 
+
+## ELK Stack
+
+- Download and install the public signing key: `sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
+
+- Fix Elasticsearch failed to bind service: `sudo chown 1000:1000 <directory you wish to mount>`
+
+- Kibana config file location: `/etc/kibana/kibana.yml`
+
+- Create `logstash.repo` on /etc/yum.repos.d/:
+
+    ```
+    [logstash-7.x]
+    name=Elastic repository for 7.x packages
+    baseurl=https://artifacts.elastic.co/packages/7.x/yum
+    gpgcheck=1
+    gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    enabled=1
+    autorefresh=1
+    type=rpm-md
+    ```
+    
+- Enable Filebeat Modules (config file = `/etc/filebeat/filebeat.yml`): 
+    ```
+    sudo filebeat modules list
+    sudo filebeat modules enable system
+    ```
+
+## Java
+
+- Install Java: `sudo yum install -y <java version>`
+    - OpenJDK 11: `java-11-openjdk`
+    - OpenJDK 11 with Java Development Kit: `java-11-openjdk-devel`s
+    - OpenJDK 8 with Java Development Kit: `java-1.8.0-openjdk-devel`
+
 ## Linux
 
 - Make file executable: `chmod +x filename.sh`
@@ -93,6 +138,7 @@
     - Copy ssh public key to remote machine: `ssh-copy-id demo@198.51.100.0`
     - disable password for root login: `sudo nano /etc/ssh/sshd_config` and modify to `PermitRootLogin without-password`
 
+- Check for netstat port forwarding: `netstat -tulpn | grep 9200`
 
 - Important Linux File Directories:
 
