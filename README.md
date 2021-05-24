@@ -48,6 +48,9 @@
 - Create kibana container:
 `docker run -d --name kib01-test --net elastic -p 5601:5601 -e "ELASTICSEARCH_HOSTS=http://es01-test:9200" docker.elastic.co/kibana/kibana:7.12.1`
 
+- OWASP Glue:
+`docker run -d --name owasp-glue -v ${HOME}/owasp/:/src/ owasp/glue OWASPDependencyCheck /src`
+
 
 ## Powershell v7
 
@@ -128,6 +131,16 @@
     - OpenJDK 11: `java-11-openjdk`
     - OpenJDK 11 with Java Development Kit: `java-11-openjdk-devel`s
     - OpenJDK 8 with Java Development Kit: `java-1.8.0-openjdk-devel`
+
+## Security
+- Security Applications
+    - Find Sec Bugs (For Java applications)
+    - OWASP Zed Attack Proxy (Dynamic Vulnerability Scanner)
+    - SQLMap (SQL Injection)
+    - OpenVAS (Vulnerability Scanner)
+    - Recon-Ng (Searches for exposed codes)
+    - OWASP Glue Tool Project 
+    - Contrast RASP (Continuous Monitoring)
 
 ## Linux
 
