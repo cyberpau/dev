@@ -51,6 +51,20 @@
 - OWASP Glue:
 `docker run -d --name owasp-glue -v ${HOME}/owasp/:/src/ owasp/glue OWASPDependencyCheck /src`
 
+## Kubernetes
+
+- Get all pods with labels: `kubectl get pods --show-labels` or `kubectl get pods --selector env=production, 'release-version in (1.0, 2.0)'`
+
+- Delete a label from pod: `kubectl label pod/<pod-name> <label-name>-`
+
+- Get rollout history: `kubectl rollout history deployment`
+
+- Inspect for issues: `kubectl describe <resource> <resource-name>` and `kubectl get logs <pod-name>`, then `kubectl exec -it <pod-name> /bin/bash`.
+
+- Create configmap: `kubectl create configmap <configmap-name> --from-literal=log_level=debug`
+
+- Create secret: `kubectl create secret generic apikey --from-literal=api_key=123456790`
+-
 
 ## Powershell v7
 
