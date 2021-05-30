@@ -14,8 +14,19 @@
 
 - Destroy a vagrant machine: `vagrant destroy ID_TAG`
 
+- Destroy all: `vagrant destroy -f`
+
 
 ## Ansible
+
+- Install Ansible: 
+
+    ```
+    sudo yum install -y epel-release ansible
+
+    ```
+
+- Configure hosts: `sudo vi /etc/ansible/hosts`
 
 - Using ansible ping module for basic connectivity check: `ansible all -m ping`
 
@@ -64,7 +75,10 @@
 - Create configmap: `kubectl create configmap <configmap-name> --from-literal=log_level=debug`
 
 - Create secret: `kubectl create secret generic apikey --from-literal=api_key=123456790`
--
+
+## cAdvisor
+
+## Prometheus
 
 ## Powershell v7
 
