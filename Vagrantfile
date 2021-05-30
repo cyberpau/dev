@@ -1,28 +1,50 @@
-CPUS="2"
-MEMORY="4096"
+IMAGE_NAME = "centos/7"
+K8S_CLUSTER_NAME = "k8s-dev-cluster"
+
+MASTERS_NAME = "kmaster-"
+MASTERS_NUM = 1
+MASTERS_CPU = 2 
+MASTERS_MEM = 2048
+
+WORKER_NAME = "kworker-"
+NODES_NUM = 2
+NODES_CPU = 1
+NODES_MEM = 1024
+
+IP_BASE = "192.168.50."
+
+VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
 
 Vagrant.configure("2") do |config|
+    config.ssh.insert_key = false
 
-  config.vm.box = "centos/7"
-  config.vm.hostname = "dev.cyberpau.vm"
+    ## Provision Master Nodes -------------------------
+    (1..MASTERS_NUM).each do |i|      
+        config.vm.define "#{MASTERS_NAME}#{i}" do |master|
+            master.vm.box = IMAGE_NAME
+            master.vm.network "private_network", ip: "#{IP_BASE}#{i + 10}"
+            master.vm.hostname = "#{MASTERS_NAME}#{i}"
+            master.vm.provider "virtualbox" do |v|
+                v.memory = MASTERS_MEM
+                v.cpus = MASTERS_CPU
+            end
+            config.vm.provision "shell", path: "bootstrap.sh"
+            config.vm.provision "shell", path: "master-bootstrap.sh"
+        end
+    end
 
-  # Install Docker / Docker Compose
-  # config.vm.provision :docker
-
-  # Run bootstrap
-  config.vm.provision "shell", path: "bootstrap.sh"
-
-  # Enable port-forwarding
-  # config.vm.network :forwarded_port, host: 5432, guest: 5432
-  config.vm.network "private_network", ip: "55.55.55.5"
-  # config.vm.network :forwarded_port, host: 5432, guest: 5432
-  # config.vm.network :forwarded_port, host: 3306, guest: 3306
-  # config.vm.network :forwarded_port, host: 8081, guest: 80
-
-  config.vm.provider "virtualbox" do |v|
-    v.name = "dev.cyberpau.vm"
-    v.memory = MEMORY
-    v.cpus = CPUS
-  end
-
+    ## Provision Worker Nodes -------------------------
+    (1..NODES_NUM).each do |j|
+        config.vm.define "#{WORKER_NAME}#{j}" do |node|
+            node.vm.box = IMAGE_NAME
+            node.vm.network "private_network", ip: "#{IP_BASE}#{j + 10 + MASTERS_NUM}"
+            node.vm.hostname = "#{WORKER_NAME}#{j}"
+            node.vm.provider "virtualbox" do |v|
+                v.memory = NODES_MEM
+                v.cpus = NODES_CPU
+            end
+            config.vm.provision "shell", path: "bootstrap.sh"
+            config.vm.provision "shell", path: "worker-bootstrap.sh"
+        end
+    end
 end
