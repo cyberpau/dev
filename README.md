@@ -85,6 +85,11 @@
 
 ## Kubernetes
 
+- Typical k8 post-install check:
+
+
+- Re-print kubeadm join command: `kubeadm token create --print-join-command`
+
 - Get all pods with labels: `kubectl get pods --show-labels` or `kubectl get pods --selector env=production, 'release-version in (1.0, 2.0)'`
 
 - Delete a label from pod: `kubectl label pod/<pod-name> <label-name>-`

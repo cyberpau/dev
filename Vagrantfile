@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     (1..MASTERS_NUM).each do |i|      
         config.vm.define "#{MASTERS_NAME}#{i}" do |master|
             master.vm.box = IMAGE_NAME
-            master.vm.network "private_network", ip: "#{IP_BASE}#{i + 10}"
+            master.vm.network "private_network", ip: "#{IP_BASE}#{i + 99*i}"
             master.vm.hostname = "#{MASTERS_NAME}#{i}"
             master.vm.provider "virtualbox" do |v|
                 v.memory = MASTERS_MEM
@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
     (1..NODES_NUM).each do |j|
         config.vm.define "#{WORKER_NAME}#{j}" do |node|
             node.vm.box = IMAGE_NAME
-            node.vm.network "private_network", ip: "#{IP_BASE}#{j + 10 + MASTERS_NUM}"
+            node.vm.network "private_network", ip: "#{IP_BASE}#{j + 100}"
             node.vm.hostname = "#{WORKER_NAME}#{j}"
             node.vm.provider "virtualbox" do |v|
                 v.memory = NODES_MEM
