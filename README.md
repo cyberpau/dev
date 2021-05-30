@@ -2,6 +2,32 @@
 
 ![test](https://raw.githubusercontent.com/cyberpau/dev/master/files/images/environment-architecture.png)
 
+
+## Pre-installation:
+
+- Any web browser (Preferred: MS Edge Browser)
+- Any IDE (Preferred: Visual Studio Code)
+- IntelliJ (for Java projects only)
+- FileZilla (for secure file transfer)
+- VirtualBox
+- Vagrant 
+- Photoshop CS6 (for photo editting)
+
+## Steps:
+
+1. Clone my dev repository: 
+    ```
+    git clone https://github.com/cyberpau/dev.git
+    cd dev
+    ```
+
+2. Create the VMs 
+    ```
+    vagrant up
+    ```
+
+2. Login to master node (kmaster-1) and run ansible
+
 <br><br>
 
 # Cheatsheets
@@ -19,12 +45,7 @@
 
 ## Ansible
 
-- Install Ansible: 
-
-    ```
-    sudo yum install -y epel-release ansible
-
-    ```
+- Install Ansible: `sudo yum install -y epel-release ansible`
 
 - Configure hosts: `sudo vi /etc/ansible/hosts`
 
@@ -180,6 +201,8 @@
     - disable password for root login: `sudo nano /etc/ssh/sshd_config` and modify to `PermitRootLogin without-password`
 
 - Check for netstat port forwarding: `netstat -tulpn | grep 9200`
+
+- Enable dhcp client `dhclient -v`
 
 - Important Linux File Directories:
 

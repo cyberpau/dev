@@ -17,7 +17,7 @@ VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
 
 Vagrant.configure("2") do |config|
     config.ssh.insert_key = false
-
+    
     ## Provision Master Nodes -------------------------
     (1..MASTERS_NUM).each do |i|      
         config.vm.define "#{MASTERS_NAME}#{i}" do |master|
