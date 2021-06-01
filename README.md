@@ -53,7 +53,7 @@
 
 ## Docker
 
-- Kill a container: `docker kill CONTAINER_NAME` and then `docker container prune`
+- Kill a container: `docker kill CONTAINER_NAME` and then `docker container prune`. To remove all stopped and dangling containers and networks, run `docker system prune`
 
 - Login to container: `docker exec -it CONTAINER_NAME bash`
 
@@ -186,7 +186,13 @@
     - OpenJDK 11 with Java Development Kit: `java-11-openjdk-devel`s
     - OpenJDK 8 with Java Development Kit: `java-1.8.0-openjdk-devel`
 
-## Security
+## Security and Infrastructure as a Code (IaaC)
+
+- Thread Modelling:
+    - OWASP App Threat Modeling Cheat Sheet
+    - OWASP Application Security Verification Standard
+    - Mozilla Rapid Risk Assesment
+
 - Security Applications
     - Find Sec Bugs (For Java applications)
     - OWASP Zed Attack Proxy (Dynamic Vulnerability Scanner)
@@ -195,6 +201,24 @@
     - Recon-Ng (Searches for exposed codes)
     - OWASP Glue Tool Project 
     - Contrast RASP (Continuous Monitoring)
+
+- Formatters
+    - Rubocop
+
+- Linters
+    - Foodcritic (Chef)
+
+- Integration
+    - Serverspec
+    - Inspec (inspec.io)
+
+- Security
+    - Gauntlt
+    - git-hound
+    - git-secrets
+    - Language Specific SAST: <BR><BR>
+    ![Image](files\images\opensource-sast.jpg)
+
 
 ## Linux
 
