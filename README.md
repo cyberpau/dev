@@ -188,10 +188,14 @@
 
 ## Security and Infrastructure as a Code (IaaC)
 
+- Websites:
+    -  [National Vulnerability Database](https://nvd.nist.gov/)
+
 - Thread Modelling:
     - OWASP App Threat Modeling Cheat Sheet
     - OWASP Application Security Verification Standard
     - Mozilla Rapid Risk Assesment
+    - OWASP Dependency Check
 
 - Security Applications
     - Find Sec Bugs (For Java applications)
@@ -201,6 +205,17 @@
     - Recon-Ng (Searches for exposed codes)
     - OWASP Glue Tool Project 
     - Contrast RASP (Continuous Monitoring)
+    - Clair (Container Scanner)
+    - Gauntlt
+    - git-hound
+    - git-secrets
+    - Arachni
+    - Nikto
+    - ZAP
+    - Burp Suite
+    - SqlMap
+    - SSLScan
+    - SSLyze
 
 - Formatters
     - Rubocop
@@ -212,12 +227,25 @@
     - Serverspec
     - Inspec (inspec.io)
 
-- Security
-    - Gauntlt
-    - git-hound
-    - git-secrets
-    - Language Specific SAST: <BR><BR>
-    ![Image](files\images\opensource-sast.jpg)
+- Bug Bounties
+    - Bugcrowd
+    - HackerOne
+
+- RASP and next-gen WAF (Runtime Defense)
+    - ModSecurity + ELK + StatsD
+    - Commercial Options:
+        - Contrast
+        - Prevoty
+        - Signal Sciences
+        - tCell
+        - Waratek
+
+- Cloud Security Monitoring:
+    - ThreatStack
+    - AlienVault
+    - Evident.io
+
+
 
 
 ## Linux
