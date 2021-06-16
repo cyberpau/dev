@@ -141,6 +141,7 @@
 
 ## Git
 
+![Git Cheatsheat](files\images\git.jpg)
 - Untrack changes to file: `git update-index --assume-unchanged src/main/resources/application.properties`
 
 - Show logs oneline: `git log --oneline --all`
@@ -188,6 +189,14 @@
 
 ## Security and Infrastructure as a Code (IaaC)
 
+- DevSecOps
+    1. Design - what do you intent your software to do? Did you make sensitive data secure?
+    2. Inherit - What dependencies / libraries / softwares you inherit?
+    3. Develop - While you develop, are you writing tests for security?
+    4. Build - do you have security acceptance test?
+    5. Deploy - What happens to get the software into production? Are you storing config and secrets securely?
+    6. Operate - Are you under active attack at this moment? What is getting attacked?
+
 - Websites:
     -  [National Vulnerability Database](https://nvd.nist.gov/)
 
@@ -216,6 +225,7 @@
     - SqlMap
     - SSLScan
     - SSLyze
+    - Arachni-scanner
 
 - Formatters
     - Rubocop
@@ -241,10 +251,10 @@
         - Waratek
 
 - Cloud Security Monitoring:
+    - AWS Config + AWS CloudTrail + Amazon Inspector + AWS GuardDuty
     - ThreatStack
     - AlienVault
     - Evident.io
-
 
 
 
