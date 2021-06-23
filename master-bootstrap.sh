@@ -31,6 +31,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 mkdir 1
 fi
 
+mkdir -p "${HOME}/apache-data/"
+mkdir -p "${HOME}/postgres-data/"
+mkdir -p "${HOME}/mysql-data/"
+mkdir -p "${HOME}/jenkins-data/"
+mkdir -p "${HOME}/kanboard/"
+mkdir -p "${HOME}/elasticsearch/"
+mkdir -p "${HOME}/nagios/"
+
 # # ONLY DO THIS ONCE!!!!
 
 # # kubeadm init --apiserver-advertise-address=192.168.50.100 --pod-network-cidr=192.168.0.0/16

@@ -83,6 +83,9 @@
 - OWASP Glue:
 `docker run -d --name owasp-glue -v ${HOME}/owasp/:/src/ owasp/glue OWASPDependencyCheck /src`
 
+- Create Nagios Container:
+`docker run -d --name nagios -v ${HOME}/nagios/:/opt/nagios/ -v ${HOME}/nagios-plugin/:/opt/Custom-Nagios-Plugins -p 8080:80 manios/nagios`
+
 ## Kubernetes
 
 - Typical k8 post-install check:
@@ -256,8 +259,11 @@
     - AlienVault
     - Evident.io
 
+## Chef
 
+- Install Chef: `curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -P chefdk -c stable`
 
+- Get version `chef --version`
 ## Linux
 
 - Make file executable: `chmod +x filename.sh`
