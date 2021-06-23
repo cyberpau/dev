@@ -264,6 +264,10 @@
 - Install Chef: `curl -L https://www.chef.io/chef/install.sh | sudo bash -s -- -P chefdk -c stable`
 
 - Get version `chef --version`
+
+- Run chef locally: `sudo chef-client -z hello.rb`
+
+
 ## Linux
 
 - Make file executable: `chmod +x filename.sh`
